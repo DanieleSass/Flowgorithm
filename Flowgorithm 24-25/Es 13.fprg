@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value="es 13 iter"/>
+        <attribute name="authors" value="Davide"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-10-21 07:59:15 "/>
+        <attribute name="created" value="RGF2aWRlO0RBVk87MjAyNC0xMC0xNjsiMDY6MzM6MjIgIjsyMDc0"/>
+        <attribute name="edited" value="RGF2aWRlO0RBVk87MjAyNC0xMC0xNjsiMDY6NDY6MzQgIjsxOzIxODk="/>
+        <attribute name="edited" value="cmFmZmE7REFOSUVMRTsyMDI0LTEwLTIxOyIwNzo1OToxNSAiOzE7MjMxMg=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="n1, n2, i" type="Real" array="False" size=""/>
+            <output expression="&quot;Numero iniziale di abitanti della popolazione&quot;" newline="True"/>
+            <input variable="n1"/>
+            <output expression="&quot;numero finale degli abitanti della popolazione&quot;" newline="True"/>
+            <input variable="n2"/>
+            <assign variable="i" expression="0"/>
+            <while expression="n1&lt;=n2">
+                <if expression="i%2=0">
+                    <then>
+                        <assign variable="n1" expression="n1*2"/>
+                    </then>
+                    <else>
+                        <assign variable="n1" expression="n1-(n1/3)"/>
+                    </else>
+                </if>
+                <assign variable="i" expression="i+1"/>
+            </while>
+            <output expression="&quot;Il numero di anni necessari &#232; :&quot; &amp; i" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

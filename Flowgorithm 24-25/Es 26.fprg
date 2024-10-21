@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="Es 26"/>
+        <attribute name="authors" value="danie"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-10-18 06:55:47 "/>
+        <attribute name="created" value="ZGFuaWU7TEFQVE9QLTZFOFVRUE1HOzIwMjQtMTAtMTg7IjA2OjQyOjI1ICI7Mjc4Nw=="/>
+        <attribute name="edited" value="ZGFuaWU7TEFQVE9QLTZFOFVRUE1HOzIwMjQtMTAtMTg7IjA2OjU1OjQ3ICI7MTsyOTAz"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="n, eq, x" type="Real" array="False" size=""/>
+            <output expression="&quot;Scrivi il valore da immettere al posto della incognita&quot;" newline="True"/>
+            <input variable="n"/>
+            <assign variable="eq" expression="n*n-5*n+11"/>
+            <assign variable="x" expression="n"/>
+            <if expression="n&gt;=0">
+                <then>
+                    <if expression="x=Int(n)">
+                        <then>
+                            <output expression="&quot;Il valore della equazione e': &quot; &amp; eq" newline="True"/>
+                        </then>
+                        <else>
+                            <output expression="&quot;Errore, inserire numeri interi&quot;" newline="True"/>
+                        </else>
+                    </if>
+                </then>
+                <else>
+                    <output expression="&quot;Inserire numeri positivi&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

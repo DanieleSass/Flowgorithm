@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="raffa"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-10-21 03:49:41 "/>
+        <attribute name="created" value="cmFmZmE7REFOSUVMRTsyMDI0LTEwLTIxOyIwMzozNDoyNyAiOzIxOTY="/>
+        <attribute name="edited" value="cmFmZmE7REFOSUVMRTsyMDI0LTEwLTIxOyIwMzo0OTo0MSAiOzI7MjMwNw=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="n, k, somma, i, esp" type="Integer" array="False" size=""/>
+            <output expression="&quot;Scrivi la base del numero che sara' elevato a potenza&quot;" newline="True"/>
+            <input variable="n"/>
+            <output expression="&quot;Scrivi l' esponente massimo&quot;" newline="True"/>
+            <input variable="k"/>
+            <assign variable="somma" expression="0"/>
+            <assign variable="esp" expression="1"/>
+            <if expression="n&gt;0 &amp;&amp; k&gt;0">
+                <then>
+                    <while expression="esp&lt;=k">
+                        <assign variable="somma" expression="somma+ n^esp"/>
+                        <assign variable="esp" expression="esp+1"/>
+                    </while>
+                </then>
+                <else>
+                    <output expression="&quot;errore&quot;" newline="True"/>
+                </else>
+            </if>
+            <output expression="&quot;La sommatoria dei valori e': &quot; &amp; somma" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

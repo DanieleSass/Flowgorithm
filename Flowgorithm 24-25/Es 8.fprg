@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="dpana"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-10-21 04:11:05 "/>
+        <attribute name="created" value="ZHBhbmE7TEFQVE9QLTE5SVZDSzJJOzIwMjEtMTAtMjQ7IjA3OjA1OjM1ICI7Mjc0Mg=="/>
+        <attribute name="edited" value="ZHBhbmE7TEFQVE9QLTE5SVZDSzJJOzIwMjEtMTAtMjY7IjA5OjQ1OjQ2ICI7MjsyODYx"/>
+        <attribute name="edited" value="ZW5yaWNhO0RFTEwyMDE5OzIwMjItMTAtMjg7IjAyOjMzOjEwICI7MTsyNDA4"/>
+        <attribute name="edited" value="cmFmZmE7REFOSUVMRTsyMDI0LTEwLTIxOyIwNDoxMTowNSAiOzE7MjI5Ng=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="Data una frase, trasformare i caratteri minuscoli in maiuscoli e viceversa"/>
+            <declare name="str, output" type="String" array="False" size=""/>
+            <declare name="i, eq" type="Integer" array="False" size=""/>
+            <output expression="&quot;Inserisci una stringa: &quot;" newline="True"/>
+            <input variable="str"/>
+            <assign variable="i" expression="0"/>
+            <assign variable="output" expression="&quot;&quot;"/>
+            <while expression="i&lt;len(str)">
+                <assign variable="eq" expression="ToCode(Char(str, i))"/>
+                <if expression="eq&gt;=65 &amp;&amp; eq&lt;=90">
+                    <then>
+                        <comment text="la lettera &#232; maiuscola"/>
+                        <assign variable="eq" expression="eq+32"/>
+                        <comment text="la mette minuscola"/>
+                    </then>
+                    <else>
+                        <if expression="eq&gt;=97 &amp;&amp; eq&lt;=122">
+                            <then>
+                                <comment text="la lettera &#232; minuscola"/>
+                                <assign variable="eq" expression="eq-32"/>
+                                <comment text="la mette maiuscola"/>
+                            </then>
+                            <else>
+                                <comment text="non &#232; una lettera, perci&#242; resta invariata"/>
+                            </else>
+                        </if>
+                    </else>
+                </if>
+                <assign variable="output" expression="output &amp; Tochar(eq)"/>
+                <assign variable="i" expression="i+1"/>
+            </while>
+            <output expression="&quot;Output: &quot; &amp; output" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

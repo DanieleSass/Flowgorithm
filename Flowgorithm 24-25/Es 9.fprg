@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="raffa"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-10-16 03:12:02 "/>
+        <attribute name="created" value="cmFmZmE7REFOSUVMRTsyMDI0LTEwLTE2OyIwMjo1OTo1MyAiOzIyMDU="/>
+        <attribute name="edited" value="cmFmZmE7REFOSUVMRTsyMDI0LTEwLTE2OyIwMzoxMjowMiAiOzE7MjI5Nw=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="n1, n2, div, somma" type="Integer" array="False" size=""/>
+            <output expression="&quot;Scrivi il primo numero&quot;" newline="True"/>
+            <input variable="n1"/>
+            <output expression="&quot;Scrivi il secondo numero&quot;" newline="True"/>
+            <input variable="n2"/>
+            <assign variable="somma" expression="0"/>
+            <assign variable="div" expression="1"/>
+            <if expression="n1&gt;=0 &amp;&amp; n2&gt;=0">
+                <then>
+                    <if expression="n1!=n2">
+                        <then>
+                            <while expression="div&lt;=(n1/2)">
+                                <if expression="n1%div=0">
+                                    <then>
+                                        <assign variable="somma" expression="somma + div"/>
+                                    </then>
+                                    <else/>
+                                </if>
+                                <assign variable="div" expression="div + 1"/>
+                            </while>
+                            <if expression="somma=n2">
+                                <then>
+                                    <output expression="&quot;il numero &quot; &amp;  n1 &amp;  &quot; e il numero &quot; &amp; n2  &amp; &quot; sono amicali&quot;" newline="True"/>
+                                </then>
+                                <else>
+                                    <output expression="&quot;il numero &quot; &amp;  n1 &amp;  &quot; e il numero &quot; &amp; n2  &amp; &quot;  NON sono amicali&quot;" newline="True"/>
+                                </else>
+                            </if>
+                        </then>
+                        <else>
+                            <output expression="&quot;Scrivere numeri diversi&quot;" newline="True"/>
+                        </else>
+                    </if>
+                </then>
+                <else>
+                    <output expression="&quot;Inserire numeri postivi&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

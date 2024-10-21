@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value="es 18 iter"/>
+        <attribute name="authors" value="dpana"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-10-21 08:05:21 "/>
+        <attribute name="created" value="ZHBhbmE7TEFQVE9QLTE5SVZDSzJJOzIwMjEtMTEtMDQ7IjA1OjQ0OjE3ICI7Mjc0Mg=="/>
+        <attribute name="edited" value="ZHBhbmE7TEFQVE9QLTE5SVZDSzJJOzIwMjEtMTEtMDQ7IjA5OjI4OjMwICI7NjsyODU2"/>
+        <attribute name="edited" value="ZW5yaWNhO0RFTEwyMDE5OzIwMjEtMTEtMTE7IjA1OjUzOjQwICI7MTtkcGFuYTtMQVBUT1AtMTlJVkNLMkk7MjAyMS0xMS0wNDsiMDU6NDQ6MTcgIjtFc19hc3RhX3JpbGFuY2lvLmZwcmc7NzM5Mw=="/>
+        <attribute name="edited" value="ZW5yaWNhO0RFTEwyMDE5OzIwMjEtMTEtMTE7IjA1OjUzOjQ1ICI7MzsyNDE1"/>
+        <attribute name="edited" value="RGF2aWRlO0RBVk87MjAyNC0xMC0yMTsiMDc6MDY6MDYgIjsxOzIxODE="/>
+        <attribute name="edited" value="cmFmZmE7REFOSUVMRTsyMDI0LTEwLTIxOyIwODowNToyMSAiOzQ7MjMwNA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="n1, n2, n" type="String" array="False" size=""/>
+            <declare name="off, offv" type="Real" array="False" size=""/>
+            <declare name="i" type="Integer" array="False" size=""/>
+            <declare name="turno" type="Boolean" array="False" size=""/>
+            <output expression="&quot;inserisci il nome del primo compratore:&quot;" newline="True"/>
+            <input variable="n1"/>
+            <output expression="&quot;Inserisci il nome del secondo compratore:&quot;" newline="True"/>
+            <input variable="n2"/>
+            <assign variable="turno" expression="true"/>
+            <assign variable="off" expression="0"/>
+            <assign variable="i" expression="0"/>
+            <do expression="i&lt;2">
+                <assign variable="offv" expression="off"/>
+                <if expression="turno">
+                    <then>
+                        <assign variable="n" expression="n1"/>
+                    </then>
+                    <else>
+                        <assign variable="n" expression="n2"/>
+                    </else>
+                </if>
+                <do expression="off&lt;=offv &amp;&amp; off!=0">
+                    <output expression="n &amp; &quot; inserisci la prima tua offerta&quot;" newline="True"/>
+                    <input variable="off"/>
+                </do>
+                <assign variable="turno" expression="!turno"/>
+                <assign variable="i" expression="i+1"/>
+            </do>
+            <assign variable="turno" expression="true"/>
+            <while expression="off!=0">
+                <assign variable="offv" expression="off"/>
+                <if expression="turno">
+                    <then>
+                        <assign variable="n" expression="n1"/>
+                    </then>
+                    <else>
+                        <assign variable="n" expression="n2"/>
+                    </else>
+                </if>
+                <do expression="off&lt;=offv &amp;&amp; off!=0">
+                    <output expression="n &amp; &quot; inserisci il rilancio sull'offerta precedente&quot;" newline="True"/>
+                    <input variable="off"/>
+                    <if expression="off&lt;=offv &amp;&amp; off!=0">
+                        <then>
+                            <output expression="&quot;Alzare il numero&quot;" newline="True"/>
+                        </then>
+                        <else/>
+                    </if>
+                </do>
+                <assign variable="turno" expression="!turno"/>
+            </while>
+            <if expression="turno">
+                <then>
+                    <output expression="n1 &amp; &quot; hai vinto l'asta alla cifra di: &quot; &amp; offv" newline="True"/>
+                </then>
+                <else>
+                    <output expression="n2 &amp; &quot; hai vinto l'asta alla cifra di: &quot; &amp; offv" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value="es 24 iter"/>
+        <attribute name="authors" value="Davide"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-10-21 06:37:53 "/>
+        <attribute name="created" value="RGF2aWRlO0RBVk87MjAyNC0xMC0yMDsiMTE6NDk6MjcgIjsyMDc3"/>
+        <attribute name="edited" value="RGF2aWRlO0RBVk87MjAyNC0xMC0yMDsiMTI6MDc6NDMgIjsxOzIxNzg="/>
+        <attribute name="edited" value="cmFmZmE7REFOSUVMRTsyMDI0LTEwLTIxOyIwNjozNzo1MyAiOzM7MjMxMQ=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="n, i, lun, valore, somma" type="Integer" array="False" size=""/>
+            <declare name="str" type="String" array="False" size=""/>
+            <output expression="&quot;inserire un numero&quot;" newline="True"/>
+            <input variable="n"/>
+            <assign variable="str" expression="Tostring(n)"/>
+            <assign variable="lun" expression="len(str)"/>
+            <assign variable="somma" expression="0"/>
+            <assign variable="i" expression="0"/>
+            <while expression="i&lt;lun">
+                <assign variable="valore" expression="Tointeger(char(str,i))"/>
+                <assign variable="valore" expression="valore^lun"/>
+                <assign variable="somma" expression="somma+valore"/>
+                <assign variable="i" expression="i+1"/>
+            </while>
+            <if expression="somma==n">
+                <then>
+                    <output expression="&quot;SI, &#232; di Armstrong&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;No, non &#232; di Armstrong&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

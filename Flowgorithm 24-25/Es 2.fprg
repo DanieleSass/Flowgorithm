@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="raffa"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-10-21 04:32:26 "/>
+        <attribute name="created" value="cmFmZmE7REFOSUVMRTsyMDI0LTEwLTIxOyIwNDoyNToyNSAiOzIxOTU="/>
+        <attribute name="edited" value="cmFmZmE7REFOSUVMRTsyMDI0LTEwLTIxOyIwNDozMjoyNiAiOzE7MjMwMg=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="n, min" type="Integer" array="False" size=""/>
+            <declare name="str" type="String" array="False" size=""/>
+            <output expression="&quot;numero&quot;" newline="True"/>
+            <input variable="n"/>
+            <assign variable="min" expression="n"/>
+            <assign variable="str" expression="&quot;&quot;"/>
+            <do expression="str!=&quot;SI&quot; &amp;&amp; str!=&quot;si&quot;">
+                <output expression="&quot;numero&quot;" newline="True"/>
+                <input variable="n"/>
+                <if expression="n&lt;=min">
+                    <then>
+                        <assign variable="min" expression="n"/>
+                    </then>
+                    <else>
+                        <assign variable="min" expression="min"/>
+                    </else>
+                </if>
+                <output expression="&quot;hai finito?&quot;" newline="True"/>
+                <input variable="str"/>
+            </do>
+            <output expression="&quot;il minimo e': &quot;  &amp; min" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="es 14"/>
+        <attribute name="authors" value="danie"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-10-17 10:16:03 "/>
+        <attribute name="created" value="ZGFuaWU7TEFQVE9QLTZFOFVRUE1HOzIwMjQtMTAtMTc7IjEwOjA4OjAzICI7Mjc3OQ=="/>
+        <attribute name="edited" value="ZGFuaWU7TEFQVE9QLTZFOFVRUE1HOzIwMjQtMTAtMTc7IjEwOjE2OjAzICI7MTsyODg2"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="n" type="Integer" array="False" size=""/>
+            <declare name="s" type="String" array="False" size=""/>
+            <output expression="&quot;Scrivi il numero&quot;" newline="True"/>
+            <input variable="n"/>
+            <if expression="n&gt;=0">
+                <then>
+                    <assign variable="s" expression="Tostring(n)"/>
+                    <output expression="len(s)" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;inserire numeri positivi o nulli&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

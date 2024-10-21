@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="raffa"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-10-17 03:29:31 "/>
+        <attribute name="created" value="cmFmZmE7REFOSUVMRTsyMDI0LTEwLTE3OyIwMzoyNTo1MCAiOzIxOTc="/>
+        <attribute name="edited" value="cmFmZmE7REFOSUVMRTsyMDI0LTEwLTE3OyIwMzoyOTozMSAiOzE7MjMwOA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="n" type="String" array="False" size=""/>
+            <output expression="&quot;scrivi quello che vuoi&quot;" newline="True"/>
+            <input variable="n"/>
+            <output expression="len(n)" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

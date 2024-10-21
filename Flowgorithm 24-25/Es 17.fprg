@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="dpana"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-10-20 07:13:44 "/>
+        <attribute name="created" value="ZHBhbmE7TEFQVE9QLTE5SVZDSzJJOzIwMjEtMTEtMDQ7IjA1OjQ0OjE3ICI7Mjc0Mg=="/>
+        <attribute name="edited" value="ZHBhbmE7TEFQVE9QLTE5SVZDSzJJOzIwMjEtMTEtMDQ7IjA5OjI4OjMwICI7NjsyODU2"/>
+        <attribute name="edited" value="ZW5yaWNhO0RFTEwyMDE5OzIwMjEtMTEtMTE7IjA1OjUzOjQwICI7MTtkcGFuYTtMQVBUT1AtMTlJVkNLMkk7MjAyMS0xMS0wNDsiMDU6NDQ6MTcgIjtFc19hc3RhX3JpbGFuY2lvLmZwcmc7NzM5Mw=="/>
+        <attribute name="edited" value="ZW5yaWNhO0RFTEwyMDE5OzIwMjEtMTEtMTE7IjA1OjUzOjQ1ICI7MzsyNDE1"/>
+        <attribute name="edited" value="cmFmZmE7REFOSUVMRTsyMDI0LTEwLTIwOyIwNzoxMzo0NCAiOzE7MjMwMw=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <comment text="Simulare un&#8217;asta in cui ci siano due compratori che si contendono l&#8217;acquisto di un oggetto, a turno i due compratori dovranno fare un&#8217;offerta per l&#8217;oggetto da comprare, l&#8217;asta termina quando uno dei due compratori si ritira offrendo &#8216;0&#8217;, a quel punto l&#8217;altro compratore si sar&#224; aggiudicato l&#8217;asta. Stampare quale compratore si &#232; aggiudicato l&#8217;asta e con che cifra.&#13;&#10;"/>
+            <declare name="p1, p2, p" type="String" array="False" size=""/>
+            <comment text="p=player=giocatori dell' asta"/>
+            <declare name="off, offv, turno" type="Real" array="False" size=""/>
+            <comment text="off= offerta&#13;&#10;offv= offerta vecchia"/>
+            <output expression="&quot;Nome del primo acquirente&quot;" newline="True"/>
+            <input variable="p1"/>
+            <output expression="&quot;Nome secondo acquirente&quot;" newline="True"/>
+            <input variable="p2"/>
+            <assign variable="turno" expression="0"/>
+            <assign variable="off" expression="0"/>
+            <do expression="off!=0">
+                <assign variable="offv" expression="off"/>
+                <if expression="turno%2=0">
+                    <then>
+                        <assign variable="p" expression="p1"/>
+                    </then>
+                    <else>
+                        <assign variable="p" expression="p2"/>
+                    </else>
+                </if>
+                <do expression="off&lt;=offv &amp;&amp; off!=0">
+                    <output expression="p &amp; &quot; ,inserisci la propria offerta, maggiore di: &quot; &amp;offv" newline="True"/>
+                    <input variable="off"/>
+                    <comment text="controlla che non sia inserito uno &quot;0&quot; o che l' offerta inserita non sia minore di quella precedente"/>
+                </do>
+                <assign variable="turno" expression="turno+1"/>
+            </do>
+            <if expression="turno%2=0">
+                <then>
+                    <comment text="l' asta &#232; terminata durante il turno di p1"/>
+                    <output expression="p1 &amp; &quot; ha vinto l'asta con l'offerta &quot; &amp;offv" newline="True"/>
+                </then>
+                <else>
+                    <comment text="l' asta &#232; terminata durante il turno di p2"/>
+                    <output expression="p2 &amp; &quot; ha vinto l'asta con l'offerta &quot; &amp;offv" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

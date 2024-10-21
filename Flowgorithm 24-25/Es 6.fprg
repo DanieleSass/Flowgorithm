@@ -1,0 +1,140 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Ester"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-10-20 07:31:40 "/>
+        <attribute name="created" value="RXN0ZXI7REVTS1RPUC1RT0hENzFLOzIwMjEtMTAtMjY7IjA3OjUxOjIyICI7Mjc2Mw=="/>
+        <attribute name="edited" value="RXN0ZXI7REVTS1RPUC1RT0hENzFLOzIwMjEtMTAtMjY7IjA4OjE0OjQ2ICI7MjsyODc4"/>
+        <attribute name="edited" value="ZHBhbmFyb3R0bztJTkZPUk1JTlM7MjAyMS0xMC0yNjsiMTI6Mjc6MDYgIjsxOzMwNzI="/>
+        <attribute name="edited" value="ZHBhbmE7TEFQVE9QLTE5SVZDSzJJOzIwMjEtMTAtMjY7IjA5OjQ2OjM0ICI7NDsyODYx"/>
+        <attribute name="edited" value="ZW5yaWNhO0RFTEwyMDE5OzIwMjItMTAtMjk7IjA4OjExOjQ2ICI7NTsyNDI0"/>
+        <attribute name="edited" value="cmFmZmE7REFOSUVMRTsyMDI0LTEwLTIwOyIwNzozMTo0MCAiOzE7MjI5OQ=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="p1, p2, p3" type="Integer" array="False" size=""/>
+            <comment text="p=punteggio"/>
+            <declare name="n1, n2, n3, c1, c2, c3" type="String" array="False" size=""/>
+            <comment text="n=nome giocatore&#13;&#10;c=carta"/>
+            <output expression="&quot;Primo giocatore: &quot;" newline="True"/>
+            <input variable="n1"/>
+            <assign variable="p1" expression="RANDOM(13)+2"/>
+            <output expression="&quot;Secondo giocatore: &quot;" newline="True"/>
+            <input variable="n2"/>
+            <do expression="p2==p1">
+                <assign variable="p2" expression="RANDOM(13)+2"/>
+            </do>
+            <output expression="&quot;Terzo giocatore: &quot;" newline="True"/>
+            <input variable="n3"/>
+            <do expression="p3==p1 || p3==p2">
+                <assign variable="p3" expression="RANDOM(13)+2"/>
+            </do>
+            <if expression="p1&gt;p2">
+                <then>
+                    <if expression="p2&gt;p3">
+                        <then>
+                            <output expression="n1 &amp; &quot; = &quot; &amp; converti(p1)" newline="True"/>
+                            <output expression="n2 &amp; &quot; = &quot; &amp; converti(p2)" newline="True"/>
+                            <output expression="n3 &amp; &quot; = &quot; &amp; converti(p3)" newline="True"/>
+                        </then>
+                        <else>
+                            <if expression="p1&gt;p3">
+                                <then>
+                                    <output expression="n1 &amp; &quot; = &quot; &amp; converti(p1)" newline="True"/>
+                                    <output expression="n3 &amp; &quot; = &quot; &amp; converti(p3)" newline="True"/>
+                                    <output expression="n2 &amp; &quot; = &quot; &amp; converti(p2)" newline="True"/>
+                                </then>
+                                <else>
+                                    <output expression="n3 &amp; &quot; = &quot; &amp; converti(p3)" newline="True"/>
+                                    <output expression="n1 &amp; &quot; = &quot; &amp; converti(p1)" newline="True"/>
+                                    <output expression="n2 &amp; &quot; = &quot; &amp; converti(p2)" newline="True"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </then>
+                <else>
+                    <if expression="p2&lt;p3">
+                        <then>
+                            <output expression="n3 &amp; &quot; = &quot; &amp; converti(p3)" newline="True"/>
+                            <output expression="n2 &amp; &quot; = &quot; &amp; converti(p2)" newline="True"/>
+                            <output expression="n1 &amp; &quot; = &quot; &amp; converti(p1)" newline="True"/>
+                        </then>
+                        <else>
+                            <if expression="p1&gt;p3">
+                                <then>
+                                    <output expression="n2 &amp; &quot; = &quot; &amp; converti(p2)" newline="True"/>
+                                    <output expression="n1 &amp; &quot; = &quot; &amp; converti(p1)" newline="True"/>
+                                    <output expression="n3 &amp; &quot; = &quot; &amp; converti(p3)" newline="True"/>
+                                </then>
+                                <else>
+                                    <output expression="n2 &amp; &quot; = &quot; &amp; converti(p2)" newline="True"/>
+                                    <output expression="n3 &amp; &quot; = &quot; &amp; converti(p3)" newline="True"/>
+                                    <output expression="n1 &amp; &quot; = &quot; &amp; converti(p1)" newline="True"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="Converti" type="String" variable="carta">
+        <parameters>
+            <parameter name="punti" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="carta" type="String" array="False" size=""/>
+            <if expression="punti==11">
+                <then>
+                    <assign variable="carta" expression="&quot;J&quot;"/>
+                </then>
+                <else>
+                    <if expression="punti==12">
+                        <then>
+                            <assign variable="carta" expression="&quot;Q&quot;"/>
+                        </then>
+                        <else>
+                            <if expression="punti==13">
+                                <then>
+                                    <assign variable="carta" expression="&quot;K&quot;"/>
+                                </then>
+                                <else>
+                                    <if expression="punti==14">
+                                        <then>
+                                            <assign variable="carta" expression="&quot;A&quot;"/>
+                                        </then>
+                                        <else>
+                                            <assign variable="carta" expression="ToString(punti)"/>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="print" type="None" variable="">
+        <parameters>
+            <parameter name="carta1" type="String" array="False"/>
+            <parameter name="nom1" type="String" array="False"/>
+            <parameter name="carta2" type="String" array="False"/>
+            <parameter name="nom2" type="String" array="False"/>
+            <parameter name="carta3" type="String" array="False"/>
+            <parameter name="nom3" type="String" array="False"/>
+            <parameter name="p1" type="Integer" array="False"/>
+            <parameter name="p2" type="Integer" array="False"/>
+            <parameter name="p3" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <output expression="&quot;nome: &quot;&amp;nom1&amp;&quot;, punteggio: &quot;&amp;carta1" newline="True"/>
+            <output expression="&quot;nome: &quot;&amp;nom2&amp;&quot;, punteggio: &quot;&amp;carta2" newline="True"/>
+            <output expression="&quot;nome: &quot;&amp;nom3&amp;&quot;, punteggio: &quot;&amp;carta3" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

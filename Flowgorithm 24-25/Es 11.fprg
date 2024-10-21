@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="raffa"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-10-16 06:24:29 "/>
+        <attribute name="created" value="cmFmZmE7REFOSUVMRTsyMDI0LTEwLTE2OyIwNTo1NjozOCAiOzIyMDg="/>
+        <attribute name="edited" value="cmFmZmE7REFOSUVMRTsyMDI0LTEwLTE2OyIwNjoyNDoyOSAiOzE7MjMxMg=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="n, a, b, c, index, fib" type="Integer" array="False" size=""/>
+            <comment text="n= numero di valori&#13;&#10;a= primo valore della sequenza&#13;&#10;b= secondo valore della sequenza&#13;&#10;index= valore che cresce di un' unit&#224; ad ogni ciclo &quot;Per&quot;&#13;&#10;fib= valore trovato nella sequenza e che viene stampato a video"/>
+            <output expression="&quot;Inserire il numero di valori per cui si vuole vedere a schermo la sequenza di Fibonacci&quot;" newline="True"/>
+            <input variable="n"/>
+            <assign variable="a" expression="0"/>
+            <assign variable="b" expression="1"/>
+            <if expression="n&gt;0">
+                <then>
+                    <if expression="n&gt;2">
+                        <then>
+                            <output expression="a &amp; &quot;, &quot; &amp; b &amp; &quot;, &quot;" newline="False"/>
+                            <for variable="index" start="1" end="n-2" direction="inc" step="1">
+                                <assign variable="fib" expression="a+b"/>
+                                <assign variable="a" expression="b"/>
+                                <assign variable="b" expression="fib"/>
+                                <output expression="fib &amp; &quot;, &quot;" newline="False"/>
+                            </for>
+                        </then>
+                        <else>
+                            <if expression="n&lt;3">
+                                <then>
+                                    <output expression="a &amp; &quot; &quot; &amp; b" newline="True"/>
+                                </then>
+                                <else>
+                                    <output expression="a" newline="True"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </then>
+                <else>
+                    <output expression="&quot;Inserire numeri positivi&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="enrica"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-10-20 07:02:09 "/>
+        <attribute name="created" value="ZW5yaWNhO0RFTEwyMDE5OzIwMjItMTEtMDM7IjEyOjUzOjA4ICI7MjMwNA=="/>
+        <attribute name="edited" value="ZW5yaWNhO0RFTEwyMDE5OzIwMjItMTEtMDM7IjAxOjAyOjQ5ICI7MTsyNDA5"/>
+        <attribute name="edited" value="cmFmZmE7REFOSUVMRTsyMDI0LTEwLTIwOyIwNzowMjowOSAiOzQ7MjMwNQ=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="h, l, i, x" type="Integer" array="False" size=""/>
+            <comment text="h= altezza del box&#13;&#10;l= lunghezza del box&#13;&#10;i= valore che aumenta nel ciclo"/>
+            <declare name="str, car" type="String" array="False" size=""/>
+            <output expression="&quot;Inserire l' altezza del rettangolo&quot;" newline="True"/>
+            <input variable="h"/>
+            <output expression="&quot;Inserire la lunghezza del rettangolo&quot;" newline="True"/>
+            <input variable="l"/>
+            <if expression="h&gt;=3 &amp;&amp; l&gt;=3">
+                <then>
+                    <for variable="i" start="1" end="h" direction="inc" step="1">
+                        <assign variable="str" expression="&quot;*&quot;"/>
+                        <if expression="i==1 || i==h">
+                            <then>
+                                <comment text="Se &#232; al primo ciclo o all' ultimo ciclo"/>
+                                <assign variable="car" expression="&quot;*&quot;"/>
+                            </then>
+                            <else>
+                                <assign variable="car" expression="&quot;Q&quot;"/>
+                            </else>
+                        </if>
+                        <for variable="x" start="1" end="l-2" direction="inc" step="1">
+                            <comment text="&quot;-2&quot; perch&#232; la prima colonna e l' ultima sono occupati di asterischi"/>
+                            <assign variable="str" expression="str&amp;car"/>
+                        </for>
+                        <assign variable="str" expression="str&amp;&quot;*&quot;"/>
+                        <output expression="str" newline="True"/>
+                    </for>
+                </then>
+                <else>
+                    <output expression="&quot;Inserire numeri maggiori o uguali a 3&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

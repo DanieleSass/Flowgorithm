@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="raffa"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-10-21 07:48:39 "/>
+        <attribute name="created" value="cmFmZmE7REFOSUVMRTsyMDI0LTEwLTIxOyIwMzo1OTo0NiAiOzIyMDQ="/>
+        <attribute name="edited" value="cmFmZmE7REFOSUVMRTsyMDI0LTEwLTIxOyIwNzo0ODozOSAiOzI7MjMxNw=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="n, max, min, minv" type="Integer" array="False" size=""/>
+            <output expression="&quot;il programma termina quando si scrive -0-&quot;" newline="True"/>
+            <output expression="&quot;numero&quot;" newline="True"/>
+            <input variable="n"/>
+            <assign variable="max" expression="0"/>
+            <assign variable="min" expression="100000000000000"/>
+            <while expression="n!=0">
+                <if expression="n&gt;=max">
+                    <then>
+                        <assign variable="max" expression="n"/>
+                    </then>
+                    <else>
+                        <assign variable="max" expression="max"/>
+                    </else>
+                </if>
+                <if expression="n&lt;=min">
+                    <then>
+                        <assign variable="min" expression="n"/>
+                    </then>
+                    <else>
+                        <assign variable="min" expression="min"/>
+                    </else>
+                </if>
+                <assign variable="minv" expression="min"/>
+                <output expression="&quot;numero&quot;" newline="True"/>
+                <input variable="n"/>
+            </while>
+            <output expression="&quot;il maggiore e': &quot; &amp; max" newline="True"/>
+            <output expression="&quot;il minore e': &quot; &amp; minv" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

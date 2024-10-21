@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="4.2">
+    <attributes>
+        <attribute name="name" value="prova es 22"/>
+        <attribute name="authors" value="danie"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-10-18 06:11:02 "/>
+        <attribute name="created" value="ZGFuaWU7TEFQVE9QLTZFOFVRUE1HOzIwMjQtMTAtMTg7IjA1OjExOjQ0ICI7Mjc4Mw=="/>
+        <attribute name="edited" value="ZGFuaWU7TEFQVE9QLTZFOFVRUE1HOzIwMjQtMTAtMTg7IjA2OjExOjAyICI7MzsyODg4"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="str, car" type="String" array="False" size=""/>
+            <declare name="contfq, cont, i" type="Integer" array="False" size=""/>
+            <declare name="fr" type="Real" array="False" size=""/>
+            <output expression="&quot;Immettere una stringa&quot;" newline="True"/>
+            <input variable="str"/>
+            <output expression="&quot;Immettere il carattere di cui si vuole sapere la frequenza assoluta e relativa&quot;" newline="True"/>
+            <input variable="car"/>
+            <assign variable="cont" expression="0"/>
+            <assign variable="contfq" expression="0"/>
+            <assign variable="i" expression="0"/>
+            <while expression="i&lt;len(str)">
+                <if expression="Char(str,i)!=&quot; &quot;">
+                    <then>
+                        <assign variable="cont" expression="cont+1"/>
+                    </then>
+                    <else>
+                        <assign variable="cont" expression="cont"/>
+                    </else>
+                </if>
+                <if expression="Char(str,i)==car">
+                    <then>
+                        <assign variable="contfq" expression="contfq+1"/>
+                    </then>
+                    <else>
+                        <assign variable="contfq" expression="contfq"/>
+                    </else>
+                </if>
+                <assign variable="i" expression="i+1"/>
+            </while>
+            <assign variable="fr" expression="contfq/cont"/>
+            <output expression="&quot;La frequenza assoluta e: &quot; &amp; contfq" newline="True"/>
+            <output expression="&quot;La frequenza relativa e': &quot; &amp; fr" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

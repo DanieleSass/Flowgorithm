@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value="es 16 iter"/>
+        <attribute name="authors" value="Davide"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-10-21 07:46:45 "/>
+        <attribute name="created" value="RGF2aWRlO0RBVk87MjAyNC0xMC0xNzsiMDU6MDQ6NDYgIjsyMDc4"/>
+        <attribute name="edited" value="RGF2aWRlO0RBVk87MjAyNC0xMC0xNzsiMDU6NTE6MjEgIjsxOzIxODE="/>
+        <attribute name="edited" value="cmFmZmE7REFOSUVMRTsyMDI0LTEwLTIxOyIwNzo0Njo0NSAiOzE7MjMxMQ=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="l" type="Integer" array="False" size=""/>
+            <declare name="x, y, tempo, cap, iniz, capn" type="Integer" array="False" size=""/>
+            <output expression="&quot;Scrivi la quantit&#224; d' acqua che il lavandino scarica ogni secondo&quot;" newline="True"/>
+            <input variable="x"/>
+            <output expression="&quot;Scrivi la quantit&#224; di acqua che cade dal lavandino ogni 3 secondi&quot;" newline="True"/>
+            <input variable="y"/>
+            <output expression="&quot;Scrivi il liverllo iniziale dell' acqua&quot;" newline="True"/>
+            <input variable="iniz"/>
+            <output expression="&quot;Scrivi la capacit&#224; massima del lavandino&quot;" newline="True"/>
+            <input variable="cap"/>
+            <if expression="cap&gt;0 &amp;&amp; iniz&gt;0 &amp;&amp; x&gt;0 &amp;&amp; y&gt;0">
+                <then>
+                    <assign variable="capn" expression="iniz"/>
+                    <assign variable="tempo" expression="1"/>
+                    <do expression="tempo&lt;=20 &amp;&amp; capn&gt;0 &amp;&amp; capn&lt;cap">
+                        <if expression="tempo%3=0">
+                            <then>
+                                <assign variable="capn" expression="capn-x+y"/>
+                            </then>
+                            <else>
+                                <assign variable="capn" expression="capn-x"/>
+                            </else>
+                        </if>
+                        <if expression="capn&lt;=0">
+                            <then>
+                                <output expression="&quot;Al secondo &quot; &amp; tempo &amp; &quot; il livello dell' acqua &#232;: 0&quot;" newline="True"/>
+                            </then>
+                            <else>
+                                <output expression="&quot;Al secondo &quot; &amp; tempo &amp; &quot; il livello dell' acqua &#232;: &quot; &amp; capn" newline="True"/>
+                            </else>
+                        </if>
+                        <assign variable="tempo" expression="tempo+1"/>
+                    </do>
+                    <if expression="capn&lt;cap">
+                        <then>
+                            <if expression="capn&lt;=0">
+                                <then>
+                                    <output expression="&quot;non c'&#232; pi&#249; acqua&quot;" newline="True"/>
+                                </then>
+                                <else>
+                                    <output expression="&quot;E' anora presente acqua&quot;" newline="True"/>
+                                </else>
+                            </if>
+                        </then>
+                        <else>
+                            <output expression="&quot;Il lavando straripa&quot;" newline="True"/>
+                        </else>
+                    </if>
+                </then>
+                <else>
+                    <output expression="&quot;Errore&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

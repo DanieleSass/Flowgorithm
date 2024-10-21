@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value="es 21 iter"/>
+        <attribute name="authors" value="Davide"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-10-21 06:45:07 "/>
+        <attribute name="created" value="RGF2aWRlO0RBVk87MjAyNC0xMC0xOTsiMDc6MDA6MTUgIjsyMDc0"/>
+        <attribute name="edited" value="RGF2aWRlO0RBVk87MjAyNC0xMC0xOTsiMDc6MjI6NTEgIjsxOzIxODY="/>
+        <attribute name="edited" value="cmFmZmE7REFOSUVMRTsyMDI0LTEwLTIxOyIwNjo0NTowNyAiOzI7MjMwOA=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="c1, c2, car, str" type="String" array="False" size=""/>
+            <declare name="i, lun" type="Integer" array="False" size=""/>
+            <output expression="&quot;inserire la frase&quot;" newline="True"/>
+            <input variable="str"/>
+            <output expression="&quot;Inserire il carattere che si vuole cambiare&quot;" newline="True"/>
+            <input variable="c1"/>
+            <output expression="&quot;Inserire il carattere che si vuole sostituire a: &quot; &amp; c1" newline="True"/>
+            <input variable="c2"/>
+            <assign variable="lun" expression="len(str)"/>
+            <assign variable="i" expression="0"/>
+            <while expression="i&lt;lun">
+                <assign variable="car" expression="char(str,i)"/>
+                <comment text="carattere preso in considerazione in ogni ciclo diverso"/>
+                <if expression="car=c1">
+                    <then>
+                        <comment text="se il carattere preso in considerazione &#232; uguale a quello dichiarato all' inizio che si vuole cambiare allora...."/>
+                        <assign variable="car" expression="c2"/>
+                    </then>
+                    <else>
+                        <assign variable="car" expression="car"/>
+                    </else>
+                </if>
+                <output expression="car" newline="False"/>
+                <assign variable="i" expression="i+1"/>
+            </while>
+        </body>
+    </function>
+</flowgorithm>

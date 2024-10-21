@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="3.0">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Roberto"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2024-10-20 07:19:27 "/>
+        <attribute name="created" value="Um9iZXJ0bzsgUk9CRVJUTy1QQzsgMjAxNi0wMS0yMDsgMDc6NTc6NDMgOyAyNjg3"/>
+        <attribute name="edited" value="Um9iZXJ0bzsgUk9CRVJUTy1QQzsgMjAxNi0wMS0yMDsgMDg6MDU6NDkgOyAyNjg3"/>
+        <attribute name="edited" value="ZW5yaWNhO0RFTEwyMDE5OzIwMjEtMTAtMjI7IjA2OjIzOjQ3ICI7MTsyNDE0"/>
+        <attribute name="edited" value="cmFmZmE7REFOSUVMRTsyMDI0LTEwLTIwOyIwNzoxOToyNyAiOzM7MjMxMg=="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="n, resto, valore" type="Integer" array="False" size=""/>
+            <output expression="&quot;Inserisci il numero da girare&quot;" newline="True"/>
+            <input variable="n"/>
+            <assign variable="valore" expression="0"/>
+            <while expression="n &gt;= 1">
+                <assign variable="resto" expression="n%10"/>
+                <assign variable="n" expression="n/ 10"/>
+                <assign variable="valore" expression="valore * 10 + resto"/>
+            </while>
+            <output expression="&quot;il numero girato e' : &quot; &amp; valore" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
